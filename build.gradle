@@ -5,9 +5,12 @@ archivesBaseName = 'eks-cdk-blueprints'
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5")
+        classpath("org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.4.0.2513")
     }
 }
 
@@ -20,8 +23,8 @@ sonarqube {
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.sources", "."
+        property "sonar.python.version", "3.9"
         property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**, **/*.java, **/*.jar"
-        property "sonar.cpd.exclusions", "**/*index.ts"
         property "sonar.issue.ignore.multicriteria", "e1"
         property "sonar.issue.ignore.multicriteria.e1.ruleKey", "typescript:S1848"
         property "sonar.issue.ignore.multicriteria.e1.resourceKey", "**/*.ts"
