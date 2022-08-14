@@ -129,11 +129,13 @@ kubectl apply -f sample-rest-api.yaml
 
 [app/sample-rest-api-template.yaml](./app/sample-rest-api-template.yaml)
 
-## Destroy
+## Cleanup
 
 ```bash
 cd blueprints
 cdk destroy
+
+find . -name "build" -exec rm -rf {} \;
 ```
 
 ## Reference
