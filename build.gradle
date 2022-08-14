@@ -1,0 +1,37 @@
+plugins {
+	id 'base'
+	// id 'java'
+	// id 'application'
+	// id 'org.springframework.boot' version '2.7.2'
+	// id "io.spring.dependency-management" version "1.0.13.RELEASE"
+  	id "org.sonarqube" version "3.4.0.2513"
+}
+
+repositories {
+	mavenCentral()
+}
+
+// archivesBaseName = 'eks-cdk-blueprints'
+// application {
+//     mainClass = 'com.sample.DemoApplication'
+// }
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "eks-cdk-blueprints"
+        property "sonar.projectKey", "ContainerOnAWS_eks-cdk-blueprints"
+        property "sonar.organization", "containeronaws"
+        // property "sonar.host.url", "http://127.0.0.1:9000"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.sources", "."
+        property "sonar.java.binaries", "build"
+        property "sonar.python.version", "3.9"
+        property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**"
+        property "sonar.issue.ignore.multicriteria", "e1"
+        property "sonar.issue.ignore.multicriteria.e1.ruleKey", "typescript:S1848"
+        property "sonar.issue.ignore.multicriteria.e1.resourceKey", "**/*.ts"
+        property "sonar.links.ci", "https://github.com/ContainerOnAWS/eks-cdk-blueprints"
+        property "sonar.log.level", "DEBUG"
+    }
+}
