@@ -5,7 +5,7 @@ ADD ./ /opt/build
 WORKDIR /opt/build
 
 RUN ./gradlew build --no-daemon \
-    && cp ./build/libs/devopssample-java-gradle.jar app.jar
+    && cp ./build/libs/devops-java-gradle.jar app.jar
 
 VOLUME /tmp
 EXPOSE 8080
