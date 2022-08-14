@@ -1,6 +1,6 @@
 # CDK EKS Blueprints Sample
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=engel80_cdk-eks-blueprints&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=engel80_cdk-eks-blueprints) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=engel80_cdk-eks-blueprints&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=engel80_cdk-eks-blueprints)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-cdk-blueprints&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-cdk-blueprints) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-cdk-blueprints&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-cdk-blueprints)
 
 ![Overview](./screenshots/diagram.png?raw=true)
 
