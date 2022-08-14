@@ -29,13 +29,7 @@ sonarqube {
         // property "sonar.host.url", "http://127.0.0.1:9000"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.sourceEncoding", "UTF-8"
-        // property "sonar.sources", "."
-        // property "sonar.java.binaries", "build"
         property "sonar.python.version", "3.9"
-        property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**"
-        property "sonar.issue.ignore.multicriteria", "e1"
-        property "sonar.issue.ignore.multicriteria.e1.ruleKey", "typescript:S1848"
-        property "sonar.issue.ignore.multicriteria.e1.resourceKey", "**/*.ts"
         property "sonar.links.ci", "https://github.com/ContainerOnAWS/devops-java-gradle"
         property "sonar.log.level", "DEBUG"
     }
