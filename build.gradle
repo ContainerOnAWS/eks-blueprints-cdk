@@ -28,8 +28,6 @@ sonarqube {
         property "sonar.sources", "."
         property "sonar.java.binaries", "build"
         property "sonar.python.version", "3.9"
-        // property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**, **/*.java, **/*.jar"
-        // property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**, app/**"
         property "sonar.exclusions", "**/node_modules/**, **/cdk.out/**"
         property "sonar.issue.ignore.multicriteria", "e1"
         property "sonar.issue.ignore.multicriteria.e1.ruleKey", "typescript:S1848"
