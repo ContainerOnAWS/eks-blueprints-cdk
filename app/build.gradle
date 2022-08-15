@@ -31,6 +31,5 @@ sonarqube {
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.python.version", "3.9"
         property "sonar.links.ci", "https://github.com/ContainerOnAWS/devops-java-gradle"
-        property "sonar.log.level", "DEBUG"
     }
 }
