@@ -28,12 +28,12 @@ Use the `cdk` command-line toolkit to interact with your project:
 
 ## Time To Complete
 
-| Stack                         | Time    |
-|-------------------------------|---------|
-| VPC, EKS cluster, Add-on      | 23m     |
-| Build                         | 1m      |
-| Deploy(including ALB)         | 3m      |
-| Total                         | 27m     |
+|   | Stack                         | Time    |
+|---|-------------------------------|---------|
+| 1 | VPC, EKS cluster, Add-on      | 23m     |
+| 2 | Build                         | 1m      |
+| 3 | Deploy(including ALB)         | 3m      |
+|   | Total                         | 27m     |
 
 ## Install
 
@@ -148,6 +148,6 @@ find . -name "build" -exec rm -rf {} \;
 
 ## Link
 
-* [https://github.com/engel80/aws-container](https://github.com/engel80/aws-container)
+* [https://github.com/ContainerOnAWS](https://github.com/ContainerOnAWS)
 
-* [https://github.com/engel80/cdk-eks](https://github.com/engel80/cdk-eks)
+* [https://github.com/ContainerOnAWS/eks-cdk](https://github.com/ContainerOnAWS/eks-cdk)
