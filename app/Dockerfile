@@ -1,14 +1,12 @@
-FROM python:3.9-alpine
+FROM openjdk:8-jdk-alpine
 
-VOLUME ./:app/
+RUN mkdir -p /opt/build 
+ADD ./ /opt/build
+WORKDIR /opt/build
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+RUN ./gradlew build --no-daemon \
+    && cp ./build/libs/devops-java-gradle.jar app.jar
 
-COPY . /app/
-
-WORKDIR /app
-
+VOLUME /tmp
 EXPOSE 8080
-
-CMD ["gunicorn", "flask_api:app", "--bind", "0.0.0.0:8080"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","./app.jar"]

@@ -1,6 +1,6 @@
 # CDK EKS Blueprints Sample
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=engel80_cdk-eks-blueprints&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=engel80_cdk-eks-blueprints) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=engel80_cdk-eks-blueprints&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=engel80_cdk-eks-blueprints)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-cdk-blueprints&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-cdk-blueprints) [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=ContainerOnAWS_eks-cdk-blueprints&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=ContainerOnAWS_eks-cdk-blueprints)
 
 ![Overview](./screenshots/diagram.png?raw=true)
 
@@ -28,12 +28,12 @@ Use the `cdk` command-line toolkit to interact with your project:
 
 ## Time To Complete
 
-| Stack                         | Time    |
-|-------------------------------|---------|
-| VPC, EKS cluster, Add-on      | 23m     |
-| Build                         | 1m      |
-| Deploy(including ALB)         | 3m      |
-| Total                         | 27m     |
+|   | Stack                         | Time    |
+|---|-------------------------------|---------|
+| 1 | VPC, EKS cluster, Add-on      | 23m     |
+| 2 | Build                         | 1m      |
+| 3 | Deploy(including ALB)         | 3m      |
+|   | Total                         | 27m     |
 
 ## Install
 
@@ -129,11 +129,13 @@ kubectl apply -f sample-rest-api.yaml
 
 [app/sample-rest-api-template.yaml](./app/sample-rest-api-template.yaml)
 
-## Destroy
+## Cleanup
 
 ```bash
 cd blueprints
 cdk destroy
+
+find . -name "build" -exec rm -rf {} \;
 ```
 
 ## Reference
@@ -146,6 +148,6 @@ cdk destroy
 
 ## Link
 
-* [https://github.com/engel80/aws-container](https://github.com/engel80/aws-container)
+* [https://github.com/ContainerOnAWS](https://github.com/ContainerOnAWS)
 
-* [https://github.com/engel80/cdk-eks](https://github.com/engel80/cdk-eks)
+* [https://github.com/ContainerOnAWS/eks-cdk](https://github.com/ContainerOnAWS/eks-cdk)
