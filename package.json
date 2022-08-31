@@ -1,5 +1,5 @@
 {
-  "name": "cdk-eks-gpu-cluster",
+  "name": "eks-cdk-blueprints",
   "version": "0.1.0",
   "bin": {
     "apigw-test": "bin/index.js"
@@ -23,6 +23,7 @@
     "@aws-quickstart/eks-blueprints": "^1.1.0",
     "@types/js-yaml": "4.0.5",
     "aws-cdk-lib": "2.37.0",
+    "cdk-ecr-deployment": "2.5.5",
     "constructs": "^10.0.0",
     "sync-request": "6.1.0"
   }

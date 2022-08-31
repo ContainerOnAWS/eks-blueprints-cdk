@@ -4,7 +4,7 @@ import * as iam from 'aws-cdk-lib/aws-iam';
 import * as eks from 'aws-cdk-lib/aws-eks';
 import * as blueprints from '@aws-quickstart/eks-blueprints';
 
-import { CLUSTER_NAME } from '../lib/cluster-config';
+import { CLUSTER_NAME } from '../../config';
 
 const app = new cdk.App();
 const stage = app.node.tryGetContext('stage') || 'dev';
