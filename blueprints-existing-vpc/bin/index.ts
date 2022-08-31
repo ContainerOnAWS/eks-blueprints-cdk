@@ -3,7 +3,7 @@ import * as cdk from 'aws-cdk-lib';
 
 import EksBlueprintStack from '../lib/eks-blueprint-stack';
 
-import { CLUSTER_NAME } from '../lib/cluster-config';
+import { CLUSTER_NAME } from '../../config';
 
 const app = new cdk.App();
 const env = {
