@@ -1,7 +1,7 @@
 # project
 run-sonar.sh
 # k8s deployment files
-**/sample-rest-api.yaml
+**/ping-api.yaml
 
 # common
 .gradle
@@ -31,6 +31,7 @@ run-sonar.sh
 **/node_modules
 **/cdk.out
 **/cdk.context.json
+ts.out
 
 # sonar
 **/build

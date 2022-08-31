@@ -91,48 +91,37 @@ kubectl proxy
 
 [Dashboard Login](http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login)
 
-### Step 3: Build Sample RESTful API
-
-Create an ECR for sample RESTful API:
-
-```bash
-REGION=$(aws configure get default.region)
-aws ecr create-repository --repository-name sample-rest-api --region ${REGION}
-```
+### Step 4: Build the SpringBoot Ping API
 
 Build and push to ECR:
 
 ```bash
-cd app
-
-REGION=$(aws configure get default.region)
-ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-
-echo "ACCOUNT_ID: $ACCOUNT_ID"
-echo "REGION: $REGION"
-
-docker build -t sample-rest-api .
-docker tag sample-rest-api:latest ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/sample-rest-api:latest
-aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
-docker push ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/sample-rest-api:latest
+cd ../ecr
+cdk deploy 
 ```
 
-### Step 4: Deploy Sample RESTful API
+[ecr/lib/ecr-stack.ts](./ecr/lib/ecr-stack.ts)
+
+### Step 5: Deploy the API
 
 Create a YAML file for K8s Deployment, Service, HorizontalPodAutoscaler, and Ingress using a template file.
 
 ```bash
-sed -e "s|<account-id>|${ACCOUNT_ID}|g" sample-rest-api-template.yaml | sed -e "s|<region>|${REGION}|g" > sample-rest-api.yaml
-cat sample-rest-api.yaml
-kubectl apply -f sample-rest-api.yaml
+cd ../app
+sed -e "s|<account-id>|${ACCOUNT_ID}|g" ping-api-template.yaml | sed -e "s|<region>|${REGION}|g" > ping-api.yaml
+cat ping-api.yaml
+kubectl apply -f ping-api.yaml
 ```
 
-[app/sample-rest-api-template.yaml](./app/sample-rest-api-template.yaml)
+[app/ping-api-template.yaml](./app/ping-api-template.yaml)
 
 ## Cleanup
 
 ```bash
-cd blueprints
+cd ecr
+cdk destroy
+
+cd ../blueprints
 cdk destroy
 
 find . -name "build" -exec rm -rf {} \;

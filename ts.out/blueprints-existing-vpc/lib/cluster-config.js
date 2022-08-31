@@ -1,6 +1,0 @@
-#!/usr/bin/env node
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.CLUSTER_NAME = void 0;
-exports.CLUSTER_NAME = 'eks-blueprint';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY2x1c3Rlci1jb25maWcuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9ibHVlcHJpbnRzLWV4aXN0aW5nLXZwYy9saWIvY2x1c3Rlci1jb25maWcudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUVhLFFBQUEsWUFBWSxHQUFHLGVBQWUsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIiMhL3Vzci9iaW4vZW52IG5vZGVcblxuZXhwb3J0IGNvbnN0IENMVVNURVJfTkFNRSA9ICdla3MtYmx1ZXByaW50JztcbiJdfQ==
