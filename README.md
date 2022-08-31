@@ -31,9 +31,9 @@ Use the `cdk` command-line toolkit to interact with your project:
 |   | Stack                         | Time    |
 |---|-------------------------------|---------|
 | 1 | VPC, EKS cluster, Add-on      | 23m     |
-| 2 | Build                         | 1m      |
+| 2 | Build                         | 4m      |
 | 3 | Deploy(including ALB)         | 3m      |
-|   | Total                         | 27m     |
+|   | Total                         | 30m     |
 
 ## Install
 
