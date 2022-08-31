@@ -5,14 +5,14 @@ echo "ACCOUNT_ID: $ACCOUNT_ID"
 echo "REGION: $REGION"
 sleep 1
 
-docker build -t eks-cdk .
+docker build -t eks-cdk-blueprints .
 
-aws ecr create-repository --repository-name eks-cdk --image-scanning-configuration scanOnPush=true --region $REGION
+aws ecr create-repository --repository-name eks-cdk-blueprints --image-scanning-configuration scanOnPush=true --region $REGION
 
-docker tag eks-cdk:latest ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/eks-cdk:latest
+docker tag eks-cdk-blueprints:latest ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/eks-cdk-blueprints:latest
 
 aws ecr get-login-password --region ${REGION} | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com
 
-docker push ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/eks-cdk:latest
+docker push ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/eks-cdk-blueprints:latest
 
-# docker run -it -p 8080:8080 eks-cdk
+# docker run -it -p 8080:8080 eks-cdk-blueprints
